@@ -53,9 +53,9 @@ size = int(input())
 search = list(i for i in range(size))
 num = int(input())
 result = 0
-if num > len(search):
+if num >= size:
     result = search[-1]
-elif num >= 0 and num <= size:
+elif num >= 0 and num < size:
     result = f'{num-1} или {num+1}'
 elif num < 0:
     result = 0
