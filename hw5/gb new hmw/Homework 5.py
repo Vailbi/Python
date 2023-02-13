@@ -11,8 +11,12 @@
 # Задача 28: Напишите рекурсивную функцию sum(a, b), возвращающую сумму двух целых неотрицательных чисел.
 a = int(input())
 b = int(input())
-def Summa(x,y):
+
+
+def Summa(x, y):
     while y != 0:
-        return Summa(x+1,y-1)
+        return Summa(x + 1, y - 1)
     return x
-print(Summa(a,b))
+
+
+print(Summa(a, b))
