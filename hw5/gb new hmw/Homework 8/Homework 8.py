@@ -3,8 +3,8 @@
 
 def inputText():
     with open('file.txt', 'a') as data:
-        # data.write('\n')
-        data.writelines('\n' + input('Введите Фамилию Имя отчество телефон через пробел: '))
+        data.write('\n')
+        data.writelines(input('Введите Фамилию Имя отчество телефон через пробел: '))
 
 
 
@@ -32,15 +32,18 @@ def changeValue():
         change = input('что найти?')
         for i in tst:
             if change in i:
-                print('Введите 0 - если хотите изменить Фамилию'
-                      'Введите 1 - если хотите изменить Имя'
-                      'Введите 2 - если хотите изменить Отчество'
-                      'Введите 3 - если хотите изменить номер')
+                print(*i)
+                print('Введите 0 - если хотите изменить Фамилию \n'
+                      'Введите 1 - если хотите изменить Имя \n'
+                      'Введите 2 - если хотите изменить Отчество \n'
+                      'Введите 3 - если хотите изменить номер \n')
+                select_var = int(input())
+                Select_in_rows(i, select_var)
 
         data.seek(0)
         for i in tst:
-            data.writelines('\n' + ' '.join(i))
-            #data.write('\n')
+            data.writelines(' '.join(i) + '\n')
+
 
 
 
@@ -49,9 +52,10 @@ def delValue():
 
 
 def Select_in_rows(arr,x):
-
- l,m
-
+    print('Введите новое значение:\n')
+    new = input()
+    arr[x] = new
+    return arr
 
 def main_menu():
     while True:
