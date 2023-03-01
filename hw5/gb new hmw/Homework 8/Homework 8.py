@@ -28,7 +28,7 @@ def findText():
 def changeValue():
     with open('file.txt', 'r+', encoding="UTF-8") as data:
         tst = [line.split() for line in data.readlines()]  # создание списка из строки файла [ff,ff,ff]
-        # print(tst)
+
         change = input('что найти?')
         for i in tst:
             if change in i:
@@ -39,16 +39,22 @@ def changeValue():
                       'Введите 3 - если хотите изменить номер \n')
                 select_var = int(input())
                 Select_in_rows(i, select_var)
-
-        data.seek(0)
-        for i in tst:
-            data.writelines(' '.join(i) + '\n')
-
-
-
+    with open('file.txt', 'w', encoding="UTF-8") as data:
+        data.writelines('\n'.join(' '.join(i) for i in tst))
 
 def delValue():
-    return 1
+    with open('file.txt', 'r', encoding="UTF-8") as data:
+        new_data = data.readlines()
+        print(new_data)
+        temp = -1
+        for line in new_data:
+            temp+=1
+            print('№'+str(temp) + ' ' + line)
+        print('Dведите номер строки для удаления')
+        number_row = int(input())
+        del new_data[number_row]
+    with open('file.txt', 'w', encoding="UTF-8") as data:
+        data.writelines(new_data)
 
 
 def Select_in_rows(arr,x):
