@@ -31,11 +31,12 @@ def changeValue():
         # print(tst)
         change = input('что найти?')
         for i in tst:
-            for word in range(len(i)):
+            if change in i:
+                print('Введите 0 - если хотите изменить Фамилию'
+                      'Введите 1 - если хотите изменить Имя'
+                      'Введите 2 - если хотите изменить Отчество'
+                      'Введите 3 - если хотите изменить номер')
 
-                if change in i[word]:
-                    print(*i)
-                    i[word] = input('введите новое значение')
         data.seek(0)
         for i in tst:
             data.writelines('\n' + ' '.join(i))
@@ -47,7 +48,9 @@ def delValue():
     return 1
 
 
+def Select_in_rows(arr,x):
 
+ l,m
 
 
 def main_menu():
