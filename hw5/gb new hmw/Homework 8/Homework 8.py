@@ -2,21 +2,21 @@
 
 
 def inputText():
-    with open('file.txt', 'a') as data:
+    with open('file.txt', 'a',encoding="UTF-8") as data:
         data.write('\n')
         data.writelines(input('Введите Фамилию Имя отчество телефон через пробел: '))
 
 
 
 def printText():
-    data = open('file.txt', 'r')
+    data = open('file.txt', 'r',encoding="UTF 8")
     for line in data:
         print(line)
     data.close()
 
 def findText():
 
-    data = open('file.txt', 'r')
+    data = open('file.txt', 'r',encoding="UTF-8")
     text = input('Введите данные для поиска: ')
     for line in data.readlines():
         if text in line.split():
@@ -26,7 +26,7 @@ def findText():
 
 
 def changeValue():
-    with open('file.txt', 'r+') as data:
+    with open('file.txt', 'r+', encoding="UTF-8") as data:
         tst = [line.split() for line in data.readlines()]  # создание списка из строки файла [ff,ff,ff]
         # print(tst)
         change = input('что найти?')
