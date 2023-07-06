@@ -17,21 +17,21 @@
 # Т.е. билет с номером 385916 – счастливый, т.к. 3+8+5=9+1+6.
 # Вам требуется написать программу, которая проверяет счастливость билета.
 
-# ticket_numbers = input()
+ticket_numbers = list(map(int, input().split()))
 # part1 = sum(int(i) for i in ticket_numbers[:3])
 # part2 = sum(int(i) for i in ticket_numbers[3:])
-# print('yes' if part1 == part2 else 'no')
+print(sum(ticket_numbers[:3]), sum(j for j in ticket_numbers[3:]))
 
 
 # Задача 4: Требуется определить, можно ли от шоколадки размером n × m долек отломить k долек,
 # если разрешается сделать один разлом по прямой между дольками (то есть разломить шоколадку на два прямоугольника).
 
-m, n, k = map(int, input('Введите числа m,n,k через пробел: ').split())
-col = list(m*i for i in range(1, n))
-row = list(n*i for i in range(1, m))
-if k in col or k in row:
-    print('yes')
-else:
-    print('no')
-
-print(f'Все возможные вариант {col+row}')
+# m, n, k = map(int, input('Введите числа m,n,k через пробел: ').split())
+# col = list(m*i for i in range(1, n))
+# row = list(n*i for i in range(1, m))
+# if k in col or k in row:
+#     print('yes')
+# else:
+#     print('no')
+#
+# print(f'Все возможные вариант {col+row}')

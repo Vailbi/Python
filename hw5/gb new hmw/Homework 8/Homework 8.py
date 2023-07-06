@@ -1,22 +1,18 @@
-
-
-
 def inputText():
-    with open('file.txt', 'a',encoding="UTF-8") as data:
+    with open('file.txt', 'a', encoding="UTF-8") as data:
         data.write('\n')
         data.writelines(input('Введите Фамилию Имя отчество телефон через пробел: '))
 
 
-
 def printText():
-    data = open('file.txt', 'r',encoding="UTF 8")
+    data = open('file.txt', 'r', encoding="UTF 8")
     for line in data:
         print(line)
     data.close()
 
-def findText():
 
-    data = open('file.txt', 'r',encoding="UTF-8")
+def findText():
+    data = open('file.txt', 'r', encoding="UTF-8")
     text = input('Введите данные для поиска: ')
     for line in data.readlines():
         if text in line.split():
@@ -42,14 +38,15 @@ def changeValue():
     with open('file.txt', 'w', encoding="UTF-8") as data:
         data.writelines('\n'.join(' '.join(i) for i in tst))
 
+
 def delValue():
     with open('file.txt', 'r', encoding="UTF-8") as data:
         new_data = data.readlines()
         print(new_data)
         temp = -1
         for line in new_data:
-            temp+=1
-            print('№'+str(temp) + ' ' + line)
+            temp += 1
+            print('№' + str(temp) + ' ' + line)
         print('Dведите номер строки для удаления')
         number_row = int(input())
         del new_data[number_row]
@@ -57,21 +54,25 @@ def delValue():
         data.writelines(new_data)
 
 
-def Select_in_rows(arr,x):
+def Select_in_rows(arr, x):
     print('Введите новое значение:\n')
     new = input()
     arr[x] = new
     return arr
 
+
+
+
+
 def main_menu():
     while True:
         print('Выберите режим работы справочника:\n'
-                  'Введите 1 - Для записи данных\n'
-                  'Введите 2 - Для отображения всех данных\n'
-                  'Введите 3 - Для поиска данных\n'
-                  'Введите 4 - Для изменения данных\n'
-                  'Введите 5 - Для удалению данных\n'
-                  'Введите 0 - Для выхода из программы\n')
+              'Введите 1 - Для записи данных\n'
+              'Введите 2 - Для отображения всех данных\n'
+              'Введите 3 - Для поиска данных\n'
+              'Введите 4 - Для изменения данных\n'
+              'Введите 5 - Для удалению данных\n'
+              'Введите 0 - Для выхода из программы\n')
         num = input()
         if num == '1':
             inputText()
@@ -90,11 +91,3 @@ def main_menu():
 
 
 main_menu()
-# findText()
-
-
-
-
-# inputText()
-# printText()
-# checkText(input('Введите данные'))
